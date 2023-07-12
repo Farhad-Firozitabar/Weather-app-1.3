@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Tailwind CSS stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <title>Weather App</title>
+    <style>
+        body {
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-semibold mb-2 text-white">Weather App</h1>
+            <p class="text-lg text-gray-300">Check the weather for any location</p>
+        </div>
+
+        <!-- Search Bar -->
+        <form id="search-form" class="mb-4 flex items-center">
+            <input id="search-input" type="text"
+                class="border border-gray-800 bg-gray-800 text-white rounded-l px-4 py-2 w-full"
+                placeholder="Search location">
+            <button type="submit"
+                class="bg-blue-500 hover:bg-blue-600 text-white rounded-r px-4 py-2 ml-2">Search</button>
+        </form>
+
+        <!-- Location Suggestions -->
+        <ul id="suggestions-list" class="mb-4 hidden"></ul>
+
+        <!-- Weather Display -->
+        <div id="weather-display" class="bg-gray-800 p-4 rounded hidden">
+            <h2 class="text-2xl font-semibold mb-2" id="location-name"></h2>
+            <p class="text-lg" id="temperature"></p>
+            <p class="text-lg" id="condition"></p>
+            <p class="text-sm text-gray-300 mt-2" id="current-time"></p>
+        </div>
+
+        <!-- Loading Screen -->
+        <div id="loading-screen"
+            class="flex items-center justify-center fixed inset-0 bg-gray-900 bg-opacity-75 z-50 hidden">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <!-- Include JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
